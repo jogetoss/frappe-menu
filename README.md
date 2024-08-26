@@ -2,7 +2,7 @@
 
 Frappe Menu is a UI Menu that generates a gantt chart based on Frappe library https://frappe.io/gantt
 
-![Screenshot 2024-08-26 at 6 17 15 PM](https://github.com/user-attachments/assets/dfd3a1e0-acbd-49e8-84f1-4e6ac75770d3)
+![Screenshot 2024-08-26 at 6 15 03 PM](https://github.com/user-attachments/assets/6185ceb0-49b2-47e3-9ae6-479fcb8ca05c)
 
 
 # Getting Help
