@@ -1,6 +1,9 @@
 # Description
 
-This repository is meant to serve as a general template for how to set up new repositories in the JogetOSS organization. 
+Frappe Menu is a UI Menu that generates a gantt chart based on Frappe library https://frappe.io/gantt
+
+![Screenshot 2024-08-26 at 6 17 15 PM](https://github.com/user-attachments/assets/dfd3a1e0-acbd-49e8-84f1-4e6ac75770d3)
+
 
 # Getting Help
 
