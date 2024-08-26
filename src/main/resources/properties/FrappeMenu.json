@@ -1,0 +1,257 @@
+[
+   {
+      "title":"@@org.joget.marketplace.FrappeMenu.config@@",
+      "properties":[
+         {
+            "name":"id",
+            "label":"Id",
+            "type":"hidden"
+         },
+         {
+            "name":"customId",
+            "label":"@@org.joget.marketplace.FrappeMenu.customId@@",
+            "type":"textfield",
+            "regex_validation":"^[a-zA-Z0-9_]+$",
+            "validation_message":"@@org.joget.marketplace.FrappeMenu.invalidId@@"
+         },
+         {
+            "name":"label",
+            "label":"@@org.joget.marketplace.FrappeMenu.label@@",
+            "type":"textfield",
+            "required":"True"
+         },
+         {
+            "name" : "datalistId",
+            "label" : "@@userview.crudmenu.listId@@",
+            "type" : "selectbox",
+            "required" : "true",
+            "options_ajax" : "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/datalist/options"
+         },
+         {
+            "name":"chartUseAllDataRows",
+            "label":"@@org.joget.marketplace.FrappeMenu.chartUseAllDataRows@@",
+            "type" : "selectbox",
+            "value" : "",
+            "options" : [
+                {
+                    "value" : "",
+                    "label" : "@@org.joget.marketplace.FrappeMenu.chartUseAllDataRows.currentPage@@"
+                },
+                {
+                    "value" : "true",
+                    "label" : "@@org.joget.marketplace.FrappeMenu.chartUseAllDataRows.all@@"
+                }
+            ]
+        },
+        {
+            "name":"showTable",
+            "label":"@@org.joget.marketplace.FrappeMenu.showTable@@",
+            "type" : "selectbox",
+            "value" : "",
+            "options" : [
+                {
+                    "value" : "",
+                    "label" : "@@userview.crudmenu.checkboxPosition.no@@"
+                },
+                {
+                    "value" : "top",
+                    "label" : "@@org.joget.marketplace.FrappeMenu.showTable.top@@"
+                },
+                {
+                    "value" : "bottom",
+                    "label" : "@@org.joget.marketplace.FrappeMenu.showTable.bottom@@"
+                }
+            ]
+         },
+         {
+            "name":"showExportLinks",
+            "label":"@@org.joget.marketplace.FrappeMenu.showExportLinks@@",
+            "type" : "selectbox",
+            "value" : "",
+            "options" : [
+                {
+                    "value" : "",
+                    "label" : "@@userview.crudmenu.checkboxPosition.no@@"
+                },
+                {
+                    "value" : "true",
+                    "label" : "@@dbuilder.hidden.yes@@"
+                }
+            ],
+            "control_field":"showTable",
+            "control_value":"top|bottom",
+            "control_use_regex":"true"
+         },
+         {
+            "name":"showFilter",
+            "label":"@@org.joget.marketplace.FrappeMenu.showFilter@@",
+            "type" : "selectbox",
+            "value" : "",
+            "options" : [
+                {
+                    "value" : "",
+                    "label" : "@@userview.crudmenu.checkboxPosition.no@@"
+                },
+                {
+                    "value" : "true",
+                    "label" : "@@dbuilder.hidden.yes@@"
+                }
+            ]
+         },
+         {
+            "name":"dateFormat",
+            "label":"@@org.joget.marketplace.FrappeMenu.dateFormat@@",
+            "description":"@@org.joget.marketplace.FrappeMenu.dateFormat.description@@",
+            "type":"textfield",
+            "value" : "YYYY-MM-DD",
+            "required":"true"
+         },
+         {
+            "name":"viewMode",
+            "label":"@@org.joget.marketplace.FrappeMenu.viewMode@@",
+            "type" : "selectbox",
+            "value" : "Day",
+            "options" : [
+                {
+                    "value" : "Quarter Day",
+                    "label" : "@@org.joget.marketplace.FrappeMenu.viewMode.quarterDay@@"
+                },
+                {
+                    "value" : "Half Day",
+                    "label" : "@@org.joget.marketplace.FrappeMenu.viewMode.halfDay@@"
+                },
+                {
+                    "value" : "Day",
+                    "label" : "@@org.joget.marketplace.FrappeMenu.viewMode.day@@"
+                },
+                {
+                    "value" : "Week",
+                    "label" : "@@org.joget.marketplace.FrappeMenu.viewMode.week@@"
+                },
+                {
+                    "value" : "Month",
+                    "label" : "@@org.joget.marketplace.FrappeMenu.viewMode.month@@"
+                }
+            ]
+         },
+         {
+            "name":"width",
+            "label":"@@org.joget.marketplace.FrappeMenu.width@@",
+            "type":"textfield",
+            "value":"90%",
+            "required":"true"
+         },
+         {
+            "name":"height",
+            "label":"@@org.joget.marketplace.FrappeMenu.height@@",
+            "type":"textfield",
+            "value":"600px",
+            "required":"true"
+         }
+      ]
+   },
+   {
+      "title":"@@org.joget.marketplace.FrappeMenu.mapping@@",
+      "properties":[
+         {
+            "name":"mapping_id",
+            "label":"@@org.joget.marketplace.FrappeMenu.mapping.id@@",
+            "type":"selectbox",
+            "options_ajax_on_change":"id:datalistId",
+            "options_ajax":"[CONTEXT_PATH]/web/json/app[APP_PATH]/plugin/org.joget.marketplace.FrappeMenu/service?action=getDatalistColumns",
+            "options_ajax_method":"POST",
+            "required":"true"
+         },
+         {
+            "name":"mapping_title",
+            "label":"@@org.joget.marketplace.FrappeMenu.mapping.title@@",
+            "type":"selectbox",
+            "options_ajax_on_change":"id:datalistId",
+            "options_ajax":"[CONTEXT_PATH]/web/json/app[APP_PATH]/plugin/org.joget.marketplace.FrappeMenu/service?action=getDatalistColumns",
+            "options_ajax_method":"POST",
+            "required":"true"
+         },
+         {
+            "name":"mapping_start",
+            "label":"@@org.joget.marketplace.FrappeMenu.mapping.start@@",
+            "type":"selectbox",
+            "options_ajax_on_change":"id:datalistId",
+            "options_ajax":"[CONTEXT_PATH]/web/json/app[APP_PATH]/plugin/org.joget.marketplace.FrappeMenu/service?action=getDatalistColumns",
+            "options_ajax_method":"POST",
+            "required":"true"
+         },
+         {
+            "name":"mapping_end",
+            "label":"@@org.joget.marketplace.FrappeMenu.mapping.end@@",
+            "type":"selectbox",
+            "options_ajax_on_change":"id:datalistId",
+            "options_ajax":"[CONTEXT_PATH]/web/json/app[APP_PATH]/plugin/org.joget.marketplace.FrappeMenu/service?action=getDatalistColumns",
+            "options_ajax_method":"POST",
+            "required":"true"
+         },
+         {
+            "name":"mapping_dependencies",
+            "label":"@@org.joget.marketplace.FrappeMenu.mapping.dependencies@@",
+            "type":"selectbox",
+            "options_ajax_on_change":"id:datalistId",
+            "options_ajax":"[CONTEXT_PATH]/web/json/app[APP_PATH]/plugin/org.joget.marketplace.FrappeMenu/service?action=getDatalistColumns",
+            "options_ajax_method":"POST"
+         },
+         {
+            "name":"mapping_progress",
+            "label":"@@org.joget.marketplace.FrappeMenu.mapping.progress@@",
+            "type":"selectbox",
+            "options_ajax_on_change":"id:datalistId",
+            "options_ajax":"[CONTEXT_PATH]/web/json/app[APP_PATH]/plugin/org.joget.marketplace.FrappeMenu/service?action=getDatalistColumns"
+         },
+         {
+            "name":"mapping_custom_class",
+            "label":"@@org.joget.marketplace.FrappeMenu.mapping.customClass@@",
+            "type":"selectbox",
+            "options_ajax_on_change":"id:datalistId",
+            "options_ajax":"[CONTEXT_PATH]/web/json/app[APP_PATH]/plugin/org.joget.marketplace.FrappeMenu/service?action=getDatalistColumns"
+         }
+      ]
+    }, 
+    {
+      "title":"@@org.joget.marketplace.FrappeMenu.advanced@@",
+      "properties":[
+         {
+            "label" : "@@org.joget.marketplace.FrappeMenu.customization@@",
+            "type" : "header",
+            "description" : "@@org.joget.marketplace.FrappeMenu.customization.desc@@"
+         },
+         {
+            "name":"customization",
+            "label":"@@org.joget.marketplace.FrappeMenu.customization@@",
+            "type" : "codeeditor",
+            "mode" : "html"
+         },
+         {
+            "label":"@@userview.sqlchartmenu.userviewKeyDataFilter@@",
+            "type":"header"
+         },
+         {
+            "name":"keyName",
+            "label":"@@userview.formmenu.userviewKeyName@@",
+            "type":"textfield"
+         },
+         {
+            "label":"@@org.joget.marketplace.FrappeMenu.ui@@",
+            "type":"header"
+         },
+         {
+            "name":"customHeader",
+            "label":"@@org.joget.marketplace.FrappeMenu.customHeader@@",
+            "type":"codeeditor",
+            "mode":"html"
+         },
+         {
+            "name":"customChartFooter",
+            "label":"@@org.joget.marketplace.FrappeMenu.customFooter@@",
+            "type":"codeeditor",
+            "mode":"html"
+         }
+      ]
+   }
+]
