@@ -1748,10 +1748,12 @@ var Gantt = (function () {
           date: today
         }
       }
-
+      
+      let startDate = new Date();
+      
       for (let date of this.dates) {
         const todayDate = new Date();
-        const startDate = new Date(date);
+        startDate = new Date(date);
         const endDate = new Date(date);
         switch (view_mode) {
           case VIEW_MODE.WEEK:
@@ -1765,11 +1767,12 @@ var Gantt = (function () {
             break;
         }
         if (todayDate >= startDate && todayDate <= endDate) {
-          return { x, date: startDate }
+          return { x, date: startDate };
         } else {
           x += this.options.column_width;
         }
       }
+      return { x, date: startDate };
     }
 
     make_grid_highlights() {
