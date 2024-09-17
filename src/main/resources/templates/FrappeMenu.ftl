@@ -1,4 +1,4 @@
-    <script src="${request.contextPath}/plugin/org.joget.marketplace.FrappeMenu/lib/frappe/frappe-gantt.min.js"></script>
+    <script src="${request.contextPath}/plugin/org.joget.marketplace.FrappeMenu/lib/frappe/frappe-gantt.js"></script>
     <link href="${request.contextPath}/plugin/org.joget.marketplace.FrappeMenu/lib/frappe/frappe-gantt.min.css" rel="stylesheet" />
     
     <style>
@@ -18,6 +18,7 @@
 
         .gantt-container {
             background: white;
+            height: ${element.properties.height!};
         }
 
         .upper-text.current-upper{
@@ -67,16 +68,20 @@
         ${element.properties.error!}
     </#if>
     
+
+
+    <div id="gantt-${element.properties.id!}-mode" class="mx-auto mt-3 btn-group" role="group">
+        <button type="button" class="btn btn-sm btn-light <#if element.properties.viewMode! == "Quarter Day">active</#if>">Quarter Day</button>
+        <button type="button" class="btn btn-sm btn-light <#if element.properties.viewMode! == "Half Day">active</#if>">Half Day</button>
+        <button type="button" class="btn btn-sm btn-light <#if element.properties.viewMode! == "Day">active</#if>">Day</button>
+        <button type="button" class="btn btn-sm btn-light <#if element.properties.viewMode! == "Week">active</#if>">Week</button>
+        <button type="button" class="btn btn-sm btn-light <#if element.properties.viewMode! == "Month">active</#if>">Month</button>
+        <button type="button" class="btn btn-sm btn-light <#if element.properties.viewMode! == "Year">active</#if>">Year</button>
+    </div>
+
     <div id="gantt-${element.properties.id!}" style="min-height: ${element.properties.height!}; max-width: ${element.properties.width!}">
     </div>
 
-    <div id="gantt-${element.properties.id!}-mode" class="mx-auto mt-3 btn-group" role="group">
-        <button type="button" class="btn btn-sm btn-light active">Quarter Day</button>
-        <button type="button" class="btn btn-sm btn-light">Half Day</button>
-        <button type="button" class="btn btn-sm btn-light">Day</button>
-        <button type="button" class="btn btn-sm btn-light">Week</button>
-        <button type="button" class="btn btn-sm btn-light">Month</button>
-    </div>
 
     ${element.properties.customChartFooter!}
 
