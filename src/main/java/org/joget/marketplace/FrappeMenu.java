@@ -265,12 +265,12 @@ public class FrappeMenu extends UserviewMenu implements PluginWebSupport {
                     }
                     
                     String dependencies = "";
-                    if(!customClassColumn.isEmpty()){
+                    if(!dependenciesColumn.isEmpty()){
                         dependencies = getBinderFormattedValue(datalist, r, dependenciesColumn);
                     }
                     
                     String customClass = "";
-                    if(!dependenciesColumn.isEmpty()){
+                    if(!customClassColumn.isEmpty()){
                         customClass = getBinderFormattedValue(datalist, r, customClassColumn);
                     }
                     
