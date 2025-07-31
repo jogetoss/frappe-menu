@@ -256,7 +256,7 @@ public class FrappeMenu extends UserviewMenu implements PluginWebSupport {
                     }
                     
                     float progressFloat = 0f;
-                    if(!dependenciesColumn.isEmpty()){
+                    if(!progress.isEmpty()){
                         try{
                             progressFloat = Float.parseFloat(progress);
                         }catch(Exception ex){
